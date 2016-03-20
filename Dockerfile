@@ -66,4 +66,5 @@ RUN export DEBIAN_FRONTEND='noninteractive' && \
     /var/log/bootstrap.log \
     /var/log/dpkg.log
 
+COPY xpra.conf /etc/xpra/xpra.conf
 ENTRYPOINT ["/usr/bin/dumb-init", "/start.sh"]
