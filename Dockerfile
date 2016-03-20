@@ -36,9 +36,9 @@ RUN export DEBIAN_FRONTEND='noninteractive' && \
     vpx-tools \
     winswitch \
     vim \
-    vlc \
-    xfce4 \
-    xfce4-goodies \
+    # vlc \
+    # xfce4 \
+    # xfce4-goodies \
     # ruby \
     # ruby-augeas \
     git-core && \
