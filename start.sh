@@ -12,8 +12,7 @@ start_xpra() {
          --microphone=disabled \
          --csc-modules=opencl \
          --opengl=yes \
-         --dpi=96 \
-         --start-child="startxfce4"
+         --dpi=96
 }
 
 start_xpra
