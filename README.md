@@ -54,6 +54,7 @@ http://localhost:15000/index.html?username=anything&password=<$XPRA_HTML_PASSWD>
 
 ### full example:
 > assuming access from docker host machine
+
 Run a container, named xpra2web with port 15000 on host forwarded to port 10000 in container(where xpra html5 client listens) use 172.17.0.1 as XDMCP provider and "mycoolpassword" for AUTH.
 
 ```bash
