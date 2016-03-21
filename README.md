@@ -10,37 +10,40 @@ port=177
 
 ## usage:
 Exactly three parameters are required to run this container:
+> order is important, since i'm lazy n'all ;-)
+
   1. IP address of XDMCP host
   2. TCP port inside the container to run xpra web interface on
   3. Password to access the aforementioned interface
 
 ```bash
-export CONTAINER_NAME=xpra2web
 export XDMCP_HOST=$(ip addr show docker0 | grep -E -o "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)")
-export XPRA_HTML_PASSWD="mycoolpassword"
-export DOCKER_HOST_PORT=15000
 export CONTAINER_HTTP_PORT=10000
+export XPRA_HTML_PASSWD="mycoolpassword"
+
+export DOCKER_HOST_PORT=15000
+export CONTAINER_NAME=xpra2web
 ```
 
-### without exposing ports on docker host
+### without exposing ports on docker host:
 
 ```bash
 docker run --rm -ti --name $CONTAINER_NAME voobscout/xpra $XDMCP_HOST $CONTAINER_HTTP_PORT $XPRA_HTML_PASSWD
 ```
 
-### with exposing ports on docker host
+### with exposing ports on docker host:
 
 ```bash
 docker run --rm -ti -p $DOCKER_HOST_PORT:$CONTAINER_HTTP_PORT --name $CONTAINER_NAME voobscout/xpra $XDMCP_HOST $CONTAINER_HTTP_PORT $XPRA_HTML_PASSWD
 ```
 
-## autostart
+## autostart:
 
 ```bash
 docker run --restart=always -d -ti -p $DOCKER_HOST_PORT:$CONTAINER_HTTP_PORT --name $CONTAINER_NAME voobscout/xpra $XDMCP_HOST $CONTAINER_HTTP_PORT $XPRA_HTML_PASSWD
 ```
 
-## accessing container
+## accessing:
 i.e. in your web browser:
 
 ```
