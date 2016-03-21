@@ -47,8 +47,8 @@ RUN export DEBIAN_FRONTEND='noninteractive' && \
     useradd viptela -m -s /bin/bash && \
     echo "viptela ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/10-admins && \
 
-    curl -sL -o /tmp/dumb-init_1.0.0_amd64.deb https://github.com/Yelp/dumb-init/releases/download/v1.0.0/dumb-init_1.0.0_amd64.deb && \
-    dpkg -i /tmp/dumb-init_1.0.0_amd64.deb && \
+    curl -sL -o /tmp/dumb-init-amd64.deb https://github.com/Yelp/dumb-init/releases/download/v1.0.1/dumb-init_1.0.1_amd64.deb && \
+    dpkg -i /tmp/dumb-init-amd64.deb && \
 
     apt-get autoremove -y && \
     apt-get clean autoclean && \
