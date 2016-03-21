@@ -29,19 +29,16 @@ RUN export DEBIAN_FRONTEND='noninteractive' && \
     augeas-tools \
     cython \
     python-pyopencl \
+    cups-client \
     python-cups \
     websockify \
     libx264-142 \
     x264 \
     libvpx1 \
     vpx-tools \
+    xserver-xephyr \
     winswitch \
     vim \
-    # vlc \
-    # xfce4 \
-    # xfce4-goodies \
-    # ruby \
-    # ruby-augeas \
     git-core && \
 
     apt-get -qqfy dist-upgrade && \
@@ -67,5 +64,4 @@ RUN export DEBIAN_FRONTEND='noninteractive' && \
     /var/log/bootstrap.log \
     /var/log/dpkg.log
 
-COPY xpra.conf /etc/xpra/xpra.conf
 ENTRYPOINT ["/usr/bin/dumb-init", "/start.sh"]
