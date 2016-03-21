@@ -58,7 +58,7 @@ http://localhost:15000/index.html?username=anything&password=<$XPRA_HTML_PASSWD>
 Run a container, named xpra2web with port 15000 on host forwarded to port 10000 in container(where xpra html5 client listens) use 172.17.0.1 as XDMCP provider and "mycoolpassword" for AUTH.
 
 ```bash
-docker run --rm -ti -p 15000:10000 --name xpra2web voobscout/xpra 172.17.0.1 10000 mycoolpassword 1280x800
+docker run --rm -ti -p 15000:10000 --name xpra2web voobscout/xpra 172.17.0.1 10000 mycoolpassword
 ```
 
 in your browser, that also runs on the same host as the container:
