@@ -29,6 +29,7 @@ RUN export DEBIAN_FRONTEND='noninteractive' && \
     augeas-tools \
     cython \
     python-pyopencl \
+    python-cups \
     websockify \
     libx264-142 \
     x264 \
