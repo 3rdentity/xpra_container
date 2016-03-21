@@ -19,6 +19,7 @@ xpra_start() {
          --bind-tcp=0.0.0.0:${PORT} \
          --html=on \
          --pulseaudio=no \
+         --sharing=yes \
          --speaker=disabled \
          --microphone=disabled \
          --csc-modules=all \
@@ -31,8 +32,6 @@ xpra_start() {
          --xsettings=no \
          --system-tray=no \
          --dpi=96
-
-    #    --sharing=yes \
 }
 
 xpra_connect() {
