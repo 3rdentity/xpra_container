@@ -38,7 +38,7 @@ xpra_passwd() {
     echo "${PASSWD}" > /tmp/xpra_passwd.txt
 }
 
-# --input-method=xim
+#
 xpra_start() {
     gosu viptela \
          xpra start :200 \
@@ -56,7 +56,9 @@ xpra_start() {
          --speaker=disabled \
          --dpi=96 \
          --mdns=no \
-         --start-child="Xephyr :202 -ac -query ${IP_ADDR} -screen ${SCREEN_RES} -keybd ephyr,,,xkbmodel=evdev"
+         --input-method=xim \
+         --start-child="Xephyr :202 -ac -query ${IP_ADDR} -screen ${SCREEN_RES}"
+    # -keybd ephyr,,,xkbmodel=evdev
 }
 
 xpra_connect() {

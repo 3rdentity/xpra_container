@@ -36,9 +36,10 @@ RUN export DEBIAN_FRONTEND='noninteractive' && \
     x264 \
     libvpx1 \
     vpx-tools \
-    xserver-xephyr \
     winswitch \
     vim \
+    xserver-xorg-input-void \
+    python-gi-cairo \
     git-core && \
 
     apt-get -qqfy dist-upgrade && \
