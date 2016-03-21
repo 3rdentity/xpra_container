@@ -44,7 +44,6 @@ xpra_start() {
          xpra start :200 \
          --bind-tcp=0.0.0.0:${PORT} \
          --html=on \
-         --sharing=yes \
          --csc-modules=all \
          --opengl=yes \
          --auth=file \
@@ -52,7 +51,6 @@ xpra_start() {
          --idle-timeout=0 \
          --server-idle-timeout=0 \
          --pulseaudio=no \
-         --sharing=yes \
          --speaker=disabled \
          --dpi=96 \
          --mdns=no \
