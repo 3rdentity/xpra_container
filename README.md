@@ -64,5 +64,5 @@ docker run --rm -ti -p 15000:10000 --name xpra2web voobscout/xpra 172.17.0.1 100
 in your browser, that also runs on the same host as the container:
 
 ```
-http://localhost:15000/index.html?username=anything&normal_fullscreen=true&password=mycoolpassword
+http://localhost:15000/index.html?username=anything&password=mycoolpassword
 ```

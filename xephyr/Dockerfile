@@ -26,7 +26,6 @@ RUN export DEBIAN_FRONTEND='noninteractive' && \
     sudo \
     lsb-release \
     kmod \
-    augeas-tools \
     cython \
     python-pyopencl \
     cups-client \
@@ -36,17 +35,18 @@ RUN export DEBIAN_FRONTEND='noninteractive' && \
     x264 \
     libvpx1 \
     vpx-tools \
+    webp \
+    libgstreamer* \
     xserver-xephyr \
+    cups-pdf \
     winswitch \
-    vim \
     xserver-xorg-input-void \
-    python-gi-cairo \
-    git-core && \
+    python-gi-cairo && \
 
     apt-get -qqfy dist-upgrade && \
 
-    useradd viptela -m -s /bin/bash && \
-    echo "viptela ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/10-admins && \
+    useradd -m -s /bin/bash -G sudo -G lp -G lpadmin xuser && \
+    echo "xuser ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/10-admins && \
 
     curl -sL -o /tmp/dumb-init-amd64.deb https://github.com/Yelp/dumb-init/releases/download/v1.0.1/dumb-init_1.0.1_amd64.deb && \
     dpkg -i /tmp/dumb-init-amd64.deb && \
