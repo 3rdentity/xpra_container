@@ -45,7 +45,7 @@ RUN export DEBIAN_FRONTEND='noninteractive' && \
 
     apt-get -qqfy dist-upgrade && \
 
-    useradd -m -s /bin/bash -G sudo -G lp -G lpadmin xuser && \
+    useradd -m -s /bin/bash -G xpra,sudo,lp,lpadmin xuser && \
     echo "xuser ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/10-admins && \
 
     curl -sL -o /tmp/dumb-init-amd64.deb https://github.com/Yelp/dumb-init/releases/download/v1.0.1/dumb-init_1.0.1_amd64.deb && \
